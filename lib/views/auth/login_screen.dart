@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:sliding_up_panel2/sliding_up_panel2.dart';
+import 'package:uicn_admin/utils/constants.dart';
 
 import 'login_panel.dart';
 
@@ -47,19 +48,21 @@ class _LoginScreenState extends State<LoginScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(height: 5.h),
-                widget.back ? Container(
-                  height: 5.h,
-                  width: 10.w,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(color: Colors.grey),
-                  ),
-                  child: Icon(
-                    Icons.arrow_back,
-                    color: Colors.white,
-                    size: 18.sp,
-                  ),
-                ) : const SizedBox(),
+                widget.back
+                    ? Container(
+                        height: 5.h,
+                        width: 10.w,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(color: Colors.grey),
+                        ),
+                        child: Icon(
+                          Icons.arrow_back,
+                          color: Colors.white,
+                          size: 18.sp,
+                        ),
+                      )
+                    : const SizedBox(),
                 SizedBox(height: 2.h),
                 Text(
                   "Go ahead and set\nyour account",

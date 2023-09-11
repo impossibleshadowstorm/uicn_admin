@@ -47,7 +47,9 @@ class _NotificationListScreenState extends State<NotificationListScreen> {
                           _mainApplicationController.yOffset.value = 0.0;
                           _mainApplicationController.isDrawerOpen.value = false;
                         } else {
-                          _mainApplicationController.xOffset.value = 290.0;
+                          MediaQuery.of(context).size.width > 450
+                              ? 400.0
+                              : 320.0;
                           _mainApplicationController.yOffset.value = 80.0;
                           _mainApplicationController.isDrawerOpen.value = true;
                         }

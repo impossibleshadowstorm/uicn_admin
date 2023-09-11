@@ -58,7 +58,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
                           _mainApplicationController.yOffset.value = 0.0;
                           _mainApplicationController.isDrawerOpen.value = false;
                         } else {
-                          _mainApplicationController.xOffset.value = 290.0;
+                          _mainApplicationController.xOffset.value =
+                              MediaQuery.of(context).size.width > 450
+                                  ? 400.0
+                                  : 320.0;
                           _mainApplicationController.yOffset.value = 80.0;
                           _mainApplicationController.isDrawerOpen.value = true;
                         }
@@ -136,7 +139,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               children: [
                 Container(
                   width: 35.w,
-                  height: 150,
+                  height: MediaQuery.of(context).size.width > 450 ? 200 : 150,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(1.5.w),
