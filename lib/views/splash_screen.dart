@@ -51,9 +51,7 @@ class _SplashScreenState extends State<SplashScreen>
     checkForScreens();
   }
 
-  loadPermissions(){
-
-  }
+  loadPermissions() {}
 
   checkForScreens() {
     // print(Global.storageServices.getString(Constants.eid));
@@ -128,11 +126,10 @@ class _SplashScreenState extends State<SplashScreen>
                         Text(
                           "Admin",
                           style: GoogleFonts.timmana(
-                            color: const Color(0xff111B31),
-                            fontSize: 18.sp,
-                            fontWeight: FontWeight.w500,
-                            letterSpacing: 2
-                          ),
+                              color: const Color(0xff111B31),
+                              fontSize: 18.sp,
+                              fontWeight: FontWeight.w500,
+                              letterSpacing: 2),
                         ),
                       ],
                     ),
@@ -152,7 +149,7 @@ class _SplashScreenState extends State<SplashScreen>
                     shape: BoxShape.circle,
                     color: Colors.white,
                     image: DecorationImage(
-                        image: AssetImage('assets/images/sec.png')),
+                        image: AssetImage('assets/images/logo.png')),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black12,
