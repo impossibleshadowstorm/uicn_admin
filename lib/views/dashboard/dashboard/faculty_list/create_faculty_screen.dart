@@ -66,6 +66,8 @@ class _CreateFacultyScreenState extends State<CreateFacultyScreen> {
                         "Faculty Name", () {}, Icons.person),
                     CommonInputField.textInputField(facultyPassController,
                         "Faculty Password", () {}, Icons.lock),
+                    CommonInputField.textInputField(facultyPassController,
+                        "Faculty Password", () {}, Icons.lock),
                   ],
                 ),
               ),
