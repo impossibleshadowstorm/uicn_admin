@@ -1,3 +1,4 @@
+import 'package:uicn_admin/controllers/dashboard_controller/dashboard_controller.dart';
 import 'package:uicn_admin/controllers/main_animation_controller.dart';
 import 'package:uicn_admin/controllers/main_application_controller.dart';
 import 'package:uicn_admin/views/auth/login_screen.dart';
@@ -7,7 +8,7 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:get/get.dart';
 import 'package:uicn_admin/services/global.dart';
 
-void main() async{
+void main() async {
   await Global.init();
   runApp(MyApp());
 }
@@ -15,13 +16,16 @@ void main() async{
 class MyApp extends StatelessWidget {
   MyApp({super.key});
 
-  MainAnimationController mainAnimationController = Get.put(MainAnimationController());
-  MainApplicationController mainApplicationController = Get.put(MainApplicationController());
+  MainAnimationController mainAnimationController =
+      Get.put(MainAnimationController());
+  MainApplicationController mainApplicationController =
+      Get.put(MainApplicationController());
+  DashboardController dashboardController = Get.put(DashboardController());
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return ResponsiveSizer(builder: (context, orientation, type){
+    return ResponsiveSizer(builder: (context, orientation, type) {
       return GetMaterialApp(
         title: 'UIC Notifier Admin',
         debugShowCheckedModeBanner: false,

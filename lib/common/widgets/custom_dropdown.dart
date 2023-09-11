@@ -24,32 +24,38 @@ class CustomDropdown extends StatefulWidget {
 class CustomDropdownState extends State<CustomDropdown> {
   @override
   Widget build(BuildContext context) {
-    return DropdownButton<String>(
-      value: widget.selectedValue,
-      underline: const SizedBox(),
-      hint: Text(
-        widget.hintText,
+    return Theme(
+      data: ThemeData(
+        highlightColor: Colors.transparent,
+        splashColor: Colors.transparent,
+      ),
+      child: DropdownButton<String>(
+        value: widget.selectedValue,
+        underline: const SizedBox(),
+        hint: Text(
+          widget.hintText,
+          style: GoogleFonts.poppins(
+            color: Colors.black,
+            fontSize: 16.sp,
+          ),
+        ),
+        isDense: true,
+        isExpanded: true,
         style: GoogleFonts.poppins(
           color: Colors.black,
-          fontSize: 16.sp,
         ),
+        items: widget.items.map((String value) {
+          return DropdownMenuItem<String>(
+            value: value,
+            child: Text(value),
+          );
+        }).toList(),
+        onChanged: (String? newValue) {
+          // setState(() {
+          widget.onChanged(newValue!);
+          // });
+        },
       ),
-      isDense: true,
-      isExpanded: true,
-      style: GoogleFonts.poppins(
-        color: Colors.black,
-      ),
-      items: widget.items.map((String value) {
-        return DropdownMenuItem<String>(
-          value: value,
-          child: Text(value),
-        );
-      }).toList(),
-      onChanged: (String? newValue) {
-        // setState(() {
-        widget.onChanged(newValue!);
-        // });
-      },
     );
   }
 }
